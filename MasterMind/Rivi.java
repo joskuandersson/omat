@@ -5,6 +5,8 @@ public class Rivi {
 		public Rivi(){
 			String arvaus = syotaRivi();
 			this.arvaus=arvaus;
+			String palauteNroJAPaikka;
+			String palauteNro;
 		}
 		
 	public String syotaRivi() {
