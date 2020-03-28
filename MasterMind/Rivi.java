@@ -5,7 +5,7 @@ public class Rivi {
 		public Rivi(){
 			String arvaus = syotaRivi();
 			this.arvaus=arvaus;
-			}
+		}
 		
 	public String syotaRivi() {
 		System.out.println("Syötä neljänumeroinen koodi (arvot 0-9) sallittuja: ");

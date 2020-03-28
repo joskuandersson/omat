@@ -22,7 +22,7 @@ public class Pelivuoro {
 		boolean tarkistus = onkoOikea(arvaus, oikeaVastaus);
 		if (tarkistus == true) {
 			kierros++;
-			System.out.println("Onneksi olkoon, voitit pelin kierroksella " + kierros+ "!");
+			System.out.println("Onneksi olkoon, selvitit koodin rivill‰ " + kierros+ "!");
 		}
 		else {
 			oikeaPaikka = 0;
@@ -30,7 +30,7 @@ public class Pelivuoro {
 			laskeOikeaPaikka(arvaus, oikeaVastaus);
 			laskeOikeaLuku(arvaus, oikeaVastaus);
 			kierros++;
-			System.out.println("Oikeita numeroita oikealla paikalla "+oikeaPaikka+". Oikeita numeroita v‰‰r‰ll‰ paikalla "+oikeaLuku+" Olet yritt‰nyt arvata " + kierros+ " kertaa. Arvausyrityksi‰ j‰ljell‰:" + (12-kierros) );
+			System.out.println("Oikeita numeroita oikealla paikalla "+oikeaPaikka+". Oikeita numeroita v‰‰r‰ll‰ paikalla "+oikeaLuku+". Olet yritt‰nyt arvata " + kierros+ " kertaa. Arvausyrityksi‰ j‰ljell‰:" + (12-kierros) );
 			pelaa();
 		}
 	}
@@ -54,8 +54,8 @@ public class Pelivuoro {
 	public int laskeOikeaLuku(String a, String v){
 		StringBuilder sbA = new StringBuilder();
 		StringBuilder sbV = new StringBuilder();
-		int montaKertaaA = 0;
-		int montaKertaaV = 0;
+//		int montaKertaaA = 0;
+//		int montaKertaaV = 0;
 		int i;
 //		char[] A = new char[4];
 //		char[] V = new char[4];
@@ -67,33 +67,31 @@ public class Pelivuoro {
 				sbV.append(v.charAt(i));			
 				}
 			}
-		System.out.println(sbA.toString());
-		System.out.println(sbV.toString());
+//		System.out.println(sbA.toString());
+//		System.out.println(sbV.toString());
 		oikeaLuku=laskeEsiintyma(sbA, sbV);
-		System.out.println(oikeaLuku);
+//		System.out.println(oikeaLuku);
 //	laskeEsiintyma(sbV.toString());
 		return oikeaLuku;
 	}
 	
 	public int laskeEsiintyma(StringBuilder a, StringBuilder v ){ 
-//		StringBuilder mista = a;
-//		StringBuilder mita = v ;
 		int oikeaNroMaara=0;
 //		Arrays[] arvausNro = new Arrays[9];
 //		Arrays[] vastausNro = new Arrays[9]; 
 		
 		for (int i=0; i<9; i++) {
 			int arvausMaara=laskeMonta(a, i);
-			System.out.println("Merkki‰" +i+" on arvauksessa " +arvausMaara);
+//			System.out.println("Merkki‰" +i+" on arvauksessa " +arvausMaara);
 			int vastausMaara=laskeMonta(v, i);
-			System.out.println("Merkki‰" +i+" on vastauksessa " +vastausMaara);
+//			System.out.println("Merkki‰" +i+" on vastauksessa " +vastausMaara);
 			if (vastausMaara >= arvausMaara) {
 				oikeaNroMaara=oikeaNroMaara + arvausMaara;
 			
 			}			
 		}
      return oikeaNroMaara;           
-    } 
+	} 
 	
 	public int laskeMonta(StringBuilder sb, int nro) {
 		char etsiMerkki = (char) (nro + '0');
@@ -106,6 +104,5 @@ public class Pelivuoro {
 		}
 		return merkkiMaara;
 	}
-		
 	
 }
